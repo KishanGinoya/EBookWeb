@@ -1,0 +1,93 @@
+﻿@model DashboardStatsDTO
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "_AdminLayout";
+}
+<style>
+
+    .dashboard-title {
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .dashboard-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .stat-card {
+        color: white;
+        border: none;
+        border-radius: 10px;
+        transition: transform 0.2s;
+    }
+
+        .stat-card:hover {
+            transform: scale(1.02);
+        }
+
+        .stat-card .card-body {
+            padding: 20px;
+        }
+
+        .stat-card .card-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .card-count {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* Card Colors */
+        .stat-card.books {
+            background-color: #4a90e2;
+        }
+
+        .stat-card.orders {
+            background-color: #50e3c2;
+        }
+
+        .stat-card.genres {
+            background-color: #f5a623;
+        }
+
+        .stat-card.checkouts {
+            background-color: #d64541;
+        }
+
+</style>
+<h2 class="dashboard-title">Admin Dashboard</h2>
+
+<div class="dashboard-cards">
+    <div class="card stat-card books">
+        <div class="card-body">
+            <h5 class="card-title">Total Books</h5>
+            <p class="card-count">@Model.TotalBooks</p>
+        </div>
+    </div>
+
+    <div class="card stat-card orders">
+        <div class="card-body">
+            <h5 class="card-title">Total Orders</h5>
+            <p class="card-count">@Model.TotalOrders</p>
+        </div>
+    </div>
+
+    <div class="card stat-card genres">
+        <div class="card-body">
+            <h5 class="card-title">Total Genres</h5>
+            <p class="card-count">@Model.TotalGenres</p>
+        </div>
+    </div>
+    <div class="card stat-card genres">
+        <div class="card-body">
+            <h5 class="card-title">Total Checkouts</h5>
+            <p class="card-count">@Model.TotalCheckouts</p>
+        </div>
+    </div>
+    
+</div>
