@@ -1,4 +1,4 @@
-This is Simple BookStore Website using C#.
+This is Simple BookCart Website using C#.
 
 Features Covers:
  - Buy Book
